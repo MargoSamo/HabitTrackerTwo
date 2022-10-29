@@ -1,4 +1,4 @@
-package com.mariia.domain;
+package com.mariia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

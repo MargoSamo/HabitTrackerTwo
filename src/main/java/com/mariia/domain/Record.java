@@ -1,2 +1,5 @@
-package com.mariia.domain;public enum Record {
+package com.mariia.domain;
+
+public enum Record {
+    ACHIEVE, FAIL
 }
