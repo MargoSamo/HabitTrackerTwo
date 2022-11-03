@@ -1,7 +1,5 @@
 package com.mariia.domain;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,16 +20,16 @@ public class History {
     public History() {
     }
 
-    public String getHabitName() {
-        return habitName;
-    }
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getHabitName() {
+        return habitName;
     }
 
     public void setHabitName(String habitName) {
