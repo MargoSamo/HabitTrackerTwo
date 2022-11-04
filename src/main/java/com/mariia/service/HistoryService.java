@@ -21,4 +21,13 @@ public class HistoryService {
     public Iterable<History> getAll() {
         return historyRepository.findAll();
     }
+
+    public Iterable<History> createRecords() {
+        var histories = historyRepository.findAll();
+        for (History history : histories) {
+            history.getRecords().add(Record.FAILED);
+        }
+        historyRepository.saveAll(histories);
+        return historyRepository.findAll();
+    }
 }

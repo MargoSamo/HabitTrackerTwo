@@ -1,6 +1,7 @@
 package com.mariia.controller;
 
 import com.mariia.domain.History;
+import com.mariia.domain.Record;
 import com.mariia.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,5 +30,11 @@ public class HistoryController {
   public Iterable<History> saveHistories(@RequestBody List<History> histories) {
     historyService.save(histories);
     return historyService.getAll();
+  }
+
+  @PostMapping("/record")
+  @CrossOrigin
+  public Iterable<History> createRecord() {
+    return historyService.createRecords();
   }
 }
