@@ -9,13 +9,13 @@ public class History {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String habitName;
-    @ElementCollection(targetClass = Record.class)
-    @CollectionTable
-    @Enumerated(EnumType.STRING)
-    List<Record> records = new ArrayList<>();
+    private String habitName;
+
+    //OneToMany with Project
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "history", orphanRemoval = true)
+    private List<HistoryRecord> historyRecords = new ArrayList<>();
 
     public History() {
     }
@@ -36,20 +36,11 @@ public class History {
         this.habitName = habitName;
     }
 
-    public List<Record> getRecords() {
-        return records;
-    }
-
-    public void setRecords(List<Record> records) {
-        this.records = records;
-    }
-
     @Override
     public String toString() {
         return "History{" +
                 "id=" + id +
                 ", habitName='" + habitName + '\'' +
-                ", records=" + records +
                 '}';
     }
 }
