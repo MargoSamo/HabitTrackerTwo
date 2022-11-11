@@ -11,8 +11,11 @@ import java.util.List;
 @Service
 public class HistoryService {
 
-    @Autowired
-    private HistoryRepository historyRepository;
+    private final HistoryRepository historyRepository;
+
+    public HistoryService(@Autowired HistoryRepository historyRepository) {
+        this.historyRepository = historyRepository;
+    }
 
     public void save(List<History> histories) {
         historyRepository.saveAll(histories);

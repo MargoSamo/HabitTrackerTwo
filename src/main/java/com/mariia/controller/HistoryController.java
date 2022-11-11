@@ -1,7 +1,6 @@
 package com.mariia.controller;
 
 import com.mariia.domain.History;
-import com.mariia.domain.Record;
 import com.mariia.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
