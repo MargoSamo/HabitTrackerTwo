@@ -9,13 +9,13 @@ public class History {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String habitName;
+    private String habitName;
     @ElementCollection(targetClass = Record.class)
     @CollectionTable
     @Enumerated(EnumType.STRING)
-    List<Record> records = new ArrayList<>();
+    private List<Record> records = new ArrayList<>();
 
     public History() {
     }
